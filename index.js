@@ -50,13 +50,13 @@ let validation = function(serverRoles, userRoles){
 
 
 
-
 bot.on('ready', async () => {
     console.log("Hello, im ready");
 
 });
 
-bot.on("message",msg => {
+
+bot.on('message',msg => {
     if (msg.channel.type === "dm") return;
     if (msg.author.bot) return;
 
@@ -67,19 +67,18 @@ bot.on("message",msg => {
     if (!command.startsWith(prefix)) return;
 
     if (bot.commands.get(command.slice(prefix.length))){
-        if(validation(allowedRoles.roles,msg.member.roles.array()) || msg.member.id === owner){   
+        if (validation(allowedRoles.roles,msg.member.roles.array()) || msg.member.id === owner){
                 let cmd = bot.commands.get(command.slice(prefix.length));
                 if (cmd){
                     cmd.run(bot,msg,args);
-                }           
-            }else {
-                msg.channel.send("You dont have acces to this command");
+                }
+        } else {
+                msg.channel.send("You dont have acces to this bot commands");
         }
-    }
+}
     
 });
 
 
-
+// Bot login
 bot.login(token);
-client.login(process.env.BOT_TOKEN);

@@ -1,5 +1,5 @@
 {
-  "name": "bot",
+  "name": "snipebot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.4.2"
+    "discord.js": "^11.4.2",
+    "fortnite-api": "^2.15.0"
   }
 }
