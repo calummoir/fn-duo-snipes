@@ -2,10 +2,13 @@
 
 module.exports.run = async (bot,message,args) => {
 
-  message.channel.send("Next scrim starts in 30 seconds!");
+    message.channel.send("Next scrim in 30 seconds");
+
+    
 
 }
 
 module.exports.help = {
-  name: "30s"
+    name: "30s"
 }
+
